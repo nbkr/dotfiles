@@ -108,10 +108,16 @@ Plugin 'gmarik/Vundle.vim'
 " Other Vundle Packages
 "
 " Flake8 Plugins
-Plugin 'nvie/vim-flake8' " Don't forget to install flake8: pip install flake8
+" It is a bit anonying that you have to install flake8 as root ...
+" Don't forget to install flake8: sudo pip install flake8 
+Plugin 'nvie/vim-flake8' 
 
 " Vim GPG Plugin
 Plugin 'jamessan/vim-gnupg'
+
+" Jedi VIm
+" Install jedi before: pip install jedi
+Plugin 'davidhalter/jedi-vim'
 
 
 " All of your Plugins must be added before the following line
