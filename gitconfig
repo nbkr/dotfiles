@@ -1,0 +1,6 @@
+[user]
+	email = bf@nbkr.net
+	name = Benjamin Fleckenstein
+
+[diff "odf"]
+      textconv=odt2txt
