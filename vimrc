@@ -1,7 +1,10 @@
 " Autoreload .vimrc on save
 autocmd! bufwritepost .vimrc source %
 
-" Mapped the leader key from \ to , as \ is difficult to type on a german keyboard.
+" Mapped the leader key from \ to , as \ is difficult to type on a german
+" keyboard.  Maybe I'm going to change this as soon as I switched to an
+" english keyboard layout. The english layout is so much more convenient when
+" developing.
 let mapleader="," 
 
 " I like numbers in front
@@ -36,13 +39,15 @@ syn on
 " on startup.
 "cd %:p:h
 
-"See help: smartindent for explanation
+" See help: smartindent for explanation
 " CTRL-V CTRL-H  = ^H
 inoremap # X#
 
 " Press <F2> to set the working directory
 " to the path of the currently opened file/buffer
 map <f2> <esc><esc>:cd %:p:h<cr>
+
+" Press <F6> to toggle spellcheck.
 "noremap <f6> :set invspell<cr>
 
 " Press <F3> to insert a timestampl
@@ -55,7 +60,6 @@ set modelines=5
 
 " Man, it's the 21. century, don't use ascii!
 set encoding=UTF-8
-
 
 " I don't what the search highlighted by default.
 set nohlsearch
@@ -110,6 +114,8 @@ Plugin 'gmarik/Vundle.vim'
 " Flake8 Plugins
 " It is a bit anonying that you have to install flake8 as root ...
 " Don't forget to install flake8: sudo pip install flake8 
+" Usually ansible will take care of installing required python
+" packages.
 Plugin 'nvie/vim-flake8' 
 
 " Vim GPG Plugin
@@ -117,6 +123,8 @@ Plugin 'jamessan/vim-gnupg'
 
 " Jedi VIm
 " Install jedi before: pip install jedi
+" Usually ansible will take care of installing required python
+" packages.
 Plugin 'davidhalter/jedi-vim'
 
 
@@ -126,7 +134,6 @@ filetype plugin indent on    " required
 
 " nvie/vim-flake8 Settings
 autocmd BufWritePost *.py call Flake8()
-
 
 " vim-gnupg Settings
 " gnupg shall use the amored filetype as default
