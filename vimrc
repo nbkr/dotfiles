@@ -47,6 +47,10 @@ inoremap # X#
 " to the path of the currently opened file/buffer
 map <f2> <esc><esc>:cd %:p:h<cr>
 
+" Show an ugly, but useful red line at position 80
+set colorcolumn=+1
+
+
 " Press <F6> to toggle spellcheck.
 "noremap <f6> :set invspell<cr>
 
@@ -127,6 +131,9 @@ Plugin 'jamessan/vim-gnupg'
 " packages.
 Plugin 'davidhalter/jedi-vim'
 
+" Ack Plugin
+Bundle 'mileszs/ack.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -138,3 +145,7 @@ autocmd BufWritePost *.py call Flake8()
 " vim-gnupg Settings
 " gnupg shall use the amored filetype as default
 let g:GPGPreferArmor=1
+
+" Python files should have a tw of 79 characters
+autocmd FileType python setlocal tw=79
+
