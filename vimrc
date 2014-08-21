@@ -132,7 +132,7 @@ Plugin 'jamessan/vim-gnupg'
 Plugin 'davidhalter/jedi-vim'
 
 " Ack Plugin
-Bundle 'mileszs/ack.vim'
+" Bundle 'mileszs/ack.vim'
 
 
 " All of your Plugins must be added before the following line
