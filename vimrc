@@ -10,7 +10,7 @@ let mapleader=","
 " I like numbers in front
 " of my (unwrapped) lines
 set number
-set wrap!
+set nowrap
 
 " Tabs are spaces, not tabs!
 " Except for Makefiles!
