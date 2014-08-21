@@ -4,8 +4,9 @@ autocmd! bufwritepost .vimrc source %
 " Mapped the leader key from \ to , as \ is difficult to type on a german
 " keyboard.  Maybe I'm going to change this as soon as I switched to an
 " english keyboard layout. The english layout is so much more convenient when
-" developing.
-let mapleader="," 
+" developing. 
+" I finanly switched to an english keyboard layout and I'm not fast enough.
+" let mapleader="," 
 
 " I like numbers in front
 " of my (unwrapped) lines
