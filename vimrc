@@ -141,7 +141,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " nvie/vim-flake8 Settings
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 
 " vim-gnupg Settings
 " gnupg shall use the amored filetype as default

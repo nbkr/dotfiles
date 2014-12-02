@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -101,6 +101,10 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+bindsym $mod+n workspace prev
+bindsym $mod+m workspace next
+bindsym $mod+comma workspace back_and_forth
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -154,5 +158,5 @@ bar {
 
 
 # Startup Configuration
-exec setxkbmap -option compose:menu
+exec setxkbmap us -option compose:menu
 exec clipit
