@@ -1,5 +1,5 @@
 " Autoreload .vimrc on save
-" autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost .vimrc source %
 
 " Mapped the leader key from \ to , as \ is difficult to type on a german
 " keyboard.  Maybe I'm going to change this as soon as I switched to an
