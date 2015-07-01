@@ -135,6 +135,16 @@ Plugin 'davidhalter/jedi-vim'
 " Ack Plugin
 " Bundle 'mileszs/ack.vim'
 
+" For Angular development.
+Plugin 'burnettk/vim-angular'
+
+" Better Syntax Highlihting
+Plugin 'pangloss/vim-javascript'
+
+" Vimwiki
+Plugin 'vimwiki/vimwiki'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -149,4 +159,11 @@ let g:GPGPreferArmor=1
 
 " Python files should have a tw of 79 characters
 autocmd FileType python setlocal tw=79
+
+" hardmode!
+" execute pathogen#infect()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" Vimwiki defaults
+let g:vimwiki_list = [{'path':'~/wiki', 'path_html':'~/wikiexport'}]
 
