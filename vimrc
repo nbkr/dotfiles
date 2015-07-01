@@ -165,10 +165,10 @@ autocmd FileType python setlocal tw=79
 " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Vimwiki defaults
-let g:vimwiki_list = [{'path':'~/wiki', 'path_html':'~/wikiexport'}]
+let g:vimwiki_list = [{'path':'~/wikis/general', 'path_html':'~/wikis/export/general'}]
 
 " Vimwiki Git autocommit
 augroup benswiki
-    autocmd BufReadPre ~/wiki/index.wiki :silent !cd ~/wiki && git pull --quiet
-    autocmd BufWritePost ~/wiki/* :silent !cd ~/wiki && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
+    autocmd BufReadPre ~/wikis/general/index.wiki :silent !cd ~/wikis/general && git pull --quiet
+    autocmd BufWritePost ~/wikis/general/* :silent !cd ~/wikis/general && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
 augroup END
