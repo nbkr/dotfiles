@@ -169,6 +169,6 @@ let g:vimwiki_list = [{'path':'~/wiki', 'path_html':'~/wikiexport'}]
 
 " Vimwiki Git autocommit
 augroup benswiki
-    autocmd BufRead ~/wiki/index.wiki :silent !cd ~/wiki && git pull --quiet
+    autocmd BufReadPre ~/wiki/index.wiki :silent !cd ~/wiki && git pull --quiet
     autocmd BufWritePost ~/wiki/* :silent !cd ~/wiki && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
 augroup END
