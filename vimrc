@@ -1,5 +1,5 @@
 " Autoreload .vimrc on save
-autocmd! bufwritepost .vimrc source %
+" autocmd! bufwritepost .vimrc source %
 
 " Mapped the leader key from \ to , as \ is difficult to type on a german
 " keyboard.  Maybe I'm going to change this as soon as I switched to an
@@ -167,3 +167,8 @@ autocmd FileType python setlocal tw=79
 " Vimwiki defaults
 let g:vimwiki_list = [{'path':'~/wiki', 'path_html':'~/wikiexport'}]
 
+" Vimwiki Git autocommit
+augroup benswiki
+    autocmd BufRead ~/wiki/index.wiki :silent !cd ~/wiki && git pull --quiet
+    autocmd BufWritePost ~/wiki/* :silent !cd ~/wiki && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
+augroup END
