@@ -168,7 +168,12 @@ autocmd FileType python setlocal tw=79
 let g:vimwiki_list = [{'path':'~/wikis/general', 'path_html':'~/wikis/export/general'},{'path':'~/wikis/pp', 'path_html':'~/wikis/export/pp'}]
 
 " Vimwiki Git autocommit
-augroup benswiki
+augroup wikigeneral
     autocmd BufReadPre ~/wikis/general/index.wiki :silent !cd ~/wikis/general && git pull --quiet
     autocmd BufWritePost ~/wikis/general/* :silent !cd ~/wikis/general && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
+augroup END
+
+augroup wikipp
+    autocmd BufReadPre ~/wikis/pp/index.wiki :silent !cd ~/wikis/pp && git pull --quiet
+    autocmd BufWritePost ~/wikis/pp/* :silent !cd ~/wikis/pp && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
 augroup END
