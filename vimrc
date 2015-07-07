@@ -144,6 +144,8 @@ Plugin 'pangloss/vim-javascript'
 " Vimwiki
 Plugin 'vimwiki/vimwiki'
 
+" Editorconfig
+Plugin 'editorconfig/editorconfig-vim'
 
 
 " All of your Plugins must be added before the following line
