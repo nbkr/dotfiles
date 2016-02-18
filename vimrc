@@ -1,13 +1,6 @@
 " Autoreload .vimrc on save
 autocmd! bufwritepost .vimrc source %
 
-" Mapped the leader key from \ to , as \ is difficult to type on a german
-" keyboard.  Maybe I'm going to change this as soon as I switched to an
-" english keyboard layout. The english layout is so much more convenient when
-" developing. 
-" I finanly switched to an english keyboard layout and I'm not fast enough.
-" let mapleader="," 
-
 " I like numbers in front
 " of my (unwrapped) lines
 set number
@@ -102,73 +95,10 @@ set sc
 " make TAB behave like in bash
 set wildmode=list:longest 
 
-" Vundle
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Other Vundle Packages
-"
-" Flake8 Plugins
-" It is a bit anonying that you have to install flake8 as root ...
-" Don't forget to install flake8: sudo pip install flake8 
-" Usually ansible will take care of installing required python
-" packages.
-Plugin 'nvie/vim-flake8' 
-
-" Vim GPG Plugin
-Plugin 'jamessan/vim-gnupg'
-
-" Jedi VIm
-" Install jedi before: pip install jedi
-" Usually ansible will take care of installing required python
-" packages.
-Plugin 'davidhalter/jedi-vim'
-
-" Ack Plugin
-" Bundle 'mileszs/ack.vim'
-
-" For Angular development.
-Plugin 'burnettk/vim-angular'
-
-" Better Syntax Highlihting
-Plugin 'pangloss/vim-javascript'
-
-" Vimwiki
-Plugin 'vimwiki/vimwiki'
-
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" nvie/vim-flake8 Settings
-" autocmd BufWritePost *.py call Flake8()
-
-" vim-gnupg Settings
-" gnupg shall use the amored filetype as default
-let g:GPGPreferArmor=1
-
-" Python files should have a tw of 79 characters
-autocmd FileType python setlocal tw=79
-
-" hardmode!
-" execute pathogen#infect()
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
-" Vimwiki defaults
-let g:vimwiki_list = [{'path':'~/wikis/general', 'path_html':'~/wikis/export/general'},{'path':'~/wikis/pp', 'path_html':'~/wikis/export/pp'}]
-
-" Vimwiki Git autocommit
-augroup benswiki
-    autocmd BufReadPre ~/wikis/general/index.wiki :silent !cd ~/wikis/general && git pull --quiet
-    autocmd BufWritePost ~/wikis/general/* :silent !cd ~/wikis/general && git add -A && git commit --quiet -m 'Autocommit' && git push --quiet
-augroup END
+" If there are any machine-specific tweaks for Vim, load them from the
+" following file.
+try 
+  source ~/.vimrc.local
+catch
+" No such file? No problem; just ignore it.
+endtry 
